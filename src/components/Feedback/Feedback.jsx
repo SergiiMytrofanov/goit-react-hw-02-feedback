@@ -5,13 +5,13 @@ const FeedbackColector = ({ feedByClick }) => (
   <div className="statisticContainer">
     <h2 className="statisticHeader">Вам сподобалося у нас &#9829;</h2>
     <button type="button" className="feedbackButton" onClick={() => feedByClick("good")}>
-      Екселент
+      Так ;)
     </button>
     <button type="button" className="feedbackButton" onClick={() => feedByClick("neutral")}>
-      Типу того
+     Тай таке :)(
     </button>
     <button type="button" className="feedbackButton" onClick={() => feedByClick("bad")}>
-      Таке собі
+      Ні :(
     </button>
   </div>
 );
