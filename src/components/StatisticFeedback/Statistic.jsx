@@ -1,21 +1,23 @@
-import { Component } from "react";
+import PropTypes from 'prop-types';
 
-class StatBlock extends Component {
-  state = {  }
-  render() {
-    return (<div className="statContainer">
-    <h2 className="statHeader"> Що тутко ми маємо</h2>
-    <p className="statValue">Екселент:</p>
-    <p className="statValue">Типу того:</p>
-    <p className="statValue">Таке собі:</p>
-  </div>);
-  }
+const StatBlock = ({ good, neutral, bad, totalFeed, positiveRate }) => (
+  <>
+    <h2 className="statHeader">Що тутко ми маємо</h2>
+    <p className="statValue">Екселент: {good}</p>
+    <p className="statValue">Типу того: {neutral}</p>
+    <p className="statValue">Таке собі: {bad}</p>
+    <p className="statValue">Загалом: {totalFeed}</p>
+    <p className="statValue">Що там у підсумку: {positiveRate.toFixed(2)}&#37;</p>
+  </>
+);
+
+StatBlock.propTypes ={
+  good: PropTypes.number,
+  neutral: PropTypes.number,
+  bad:PropTypes.number,
+  totalFeed:PropTypes.number,
+
 }
 
 export default StatBlock;
 
-
-// exelent, someLikeThat, soSo
-{/* <p className="statValue">{exelent}:</p>
-<p className="statValue">{someLikeThat}:</p>
-<p className="statValue">{soSo}:</p> */}
