@@ -1,12 +1,12 @@
 import React from "react";
 import PropTypes from "prop-types";
-import styles from "./StatiBlock.module.css";
+import styles from "./StatBlock.module.css";
 
 const StatBlock = ({ good, neutral, bad, totalFeed, positiveRate }) => (
   <>
     <h2 className={styles.statHeader}>Результат опитування</h2>
     <p className={styles.statValue}>Так: {good}</p>
-    <p className={styles.statValue}>Таке собі: {neutral}</p>
+    <p className={styles.statValue}>Тай таке: {neutral}</p>
     <p className={styles.statValue}>Ні: {bad}</p>
     <p className={styles.statValue}>Загалом: {totalFeed}</p>
     <p className={styles.statValue}>Позитив: {positiveRate.toFixed(2)}&#37;</p>

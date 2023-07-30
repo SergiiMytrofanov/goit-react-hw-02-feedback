@@ -10,21 +10,21 @@ const FeedbackColector = ({ feedByClick }) => (
       type="button"
       onClick={() => feedByClick("good")}
     >
-      Так ;)
+      Так ;-)
     </button>
     <button
       className={styles.feedbackColectorButton}
       type="button"
       onClick={() => feedByClick("neutral")}
     >
-      Тай таке :(
+      Тай таке :-(
     </button>
     <button
       className={styles.feedbackColectorButton}
       type="button"
       onClick={() => feedByClick("bad")}
     >
-      Ні :(
+      Ні :-#
     </button>
   </div>
 );
