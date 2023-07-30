@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import FeedbackColector from "./Feedback/Feedback";
-import StatBlock from "./StatisticFeedback/Statistic";
+import StatBlock from "./StatBlock/StatBlock";
+import Section from "./Section/Section";
+import styles from "./App.module.css";
 
 class AppFeedbackStat extends Component {
   state = {
@@ -31,16 +33,20 @@ class AppFeedbackStat extends Component {
     const positiveRate = this.calculatePositiveRate();
 
     return (
-      <>
-        <FeedbackColector feedByClick={this.handleFeedbackClick} />
-        <StatBlock
-          good={good}
-          neutral={neutral}
-          bad={bad}
-          totalFeed={totalFeed}
-          positiveRate={positiveRate}
-        />
-      </>
+      <div className={styles.feedbackContainer}>
+        <Section >
+          <FeedbackColector feedByClick={this.handleFeedbackClick} />
+        </Section>
+        <Section >
+          <StatBlock
+            good={good}
+            neutral={neutral}
+            bad={bad}
+            totalFeed={totalFeed}
+            positiveRate={positiveRate}
+          />
+        </Section>
+      </div>
     );
   }
 }

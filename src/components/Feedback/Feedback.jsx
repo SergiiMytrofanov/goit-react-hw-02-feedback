@@ -1,23 +1,36 @@
-
-import PropTypes from 'prop-types';
+import React from "react";
+import PropTypes from "prop-types";
+import styles from "./Feedback.module.css";
 
 const FeedbackColector = ({ feedByClick }) => (
-  <div className="statisticContainer">
-    <h2 className="statisticHeader">Вам сподобалося у нас &#9829;</h2>
-    <button type="button" className="feedbackButton" onClick={() => feedByClick("good")}>
+  <div className={styles.feedbackColectorContainer}>
+    <h2 className={styles.feedbackColectorHeader}>Вам сподобалося у нас &#9829;</h2>
+    <button
+      className={styles.feedbackColectorButton}
+      type="button"
+      onClick={() => feedByClick("good")}
+    >
       Так ;)
     </button>
-    <button type="button" className="feedbackButton" onClick={() => feedByClick("neutral")}>
-     Тай таке :)(
+    <button
+      className={styles.feedbackColectorButton}
+      type="button"
+      onClick={() => feedByClick("neutral")}
+    >
+      Тай таке :(
     </button>
-    <button type="button" className="feedbackButton" onClick={() => feedByClick("bad")}>
+    <button
+      className={styles.feedbackColectorButton}
+      type="button"
+      onClick={() => feedByClick("bad")}
+    >
       Ні :(
     </button>
   </div>
 );
 
-FeedbackColector.propTypes ={
+FeedbackColector.propTypes = {
   feedByClick: PropTypes.func.isRequired,
-}
+};
 
 export default FeedbackColector;
