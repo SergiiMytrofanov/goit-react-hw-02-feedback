@@ -2,8 +2,7 @@ import React, { Component } from "react";
 import FeedbackColector from "./Feedback/Feedback";
 import StatBlock from "./StatBlock/StatBlock";
 import Section from "./Section/Section";
-// import Notification from "./StatBlock/Notіfication";
-
+import Notification from "./StatBlock/Notіfication";
 import styles from "./App.module.css";
 
 class AppFeedbackStat extends Component {
@@ -11,7 +10,6 @@ class AppFeedbackStat extends Component {
     good: 0,
     neutral: 0,
     bad: 0,
-
   };
 
   handleFeedbackClick = (feedbackType) => {
@@ -31,7 +29,7 @@ class AppFeedbackStat extends Component {
   };
 
   render() {
-    const { good, neutral, bad,} = this.state;
+    const { good, neutral, bad } = this.state;
 
     const totalFeed = good + neutral + bad;
     const positiveRate = this.calculatePositiveRate();
@@ -39,17 +37,20 @@ class AppFeedbackStat extends Component {
     return (
       <div className={styles.feedbackContainer}>
         <Section>
-          <FeedbackColector feedByClick={(type, event) => this.handleFeedbackClick(type, event)} />
+          <FeedbackColector feedByClick={(type) => this.handleFeedbackClick(type)} />
         </Section>
         <Section>
-          <StatBlock
+          {totalFeed === 0 ? (
+            <Notification message={"Тут ще немає відгуків. Ви перший"} />
+          ) : (
+            <StatBlock
               good={good}
               neutral={neutral}
               bad={bad}
               totalFeed={totalFeed}
               positiveRate={positiveRate}
             />
-
+          )}
         </Section>
       </div>
     );
