@@ -4,13 +4,13 @@ import styles from "./Section.module.css";
 
 const Section = ({ title, children }) => (
   <section className={styles.section}>
-    <h2 className={styles.title}>{title}</h2>
-    {children}
+    {title && <h2 className={styles.title}>{title}</h2>}
+      {children}
   </section>
 );
 
 Section.propTypes = {
-  title: PropTypes.string.isRequired,
+  title: PropTypes.string,
   children: PropTypes.node.isRequired,
 };
 

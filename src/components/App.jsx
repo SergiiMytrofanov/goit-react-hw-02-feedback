@@ -36,13 +36,15 @@ class AppFeedbackStat extends Component {
 
     return (
       <div className={styles.feedbackContainer}>
-        <Section>
+        <Section title="Вам сподобалося у нас &#9829;">
           <FeedbackColector feedByClick={(type) => this.handleFeedbackClick(type)} />
         </Section>
-        <Section>
           {totalFeed === 0 ? (
+            <Section>
             <Notification message={"Тут ще немає відгуків. Ви перший"} />
+            </Section>
           ) : (
+            <Section title="Результат опитування">
             <StatBlock
               good={good}
               neutral={neutral}
@@ -50,8 +52,9 @@ class AppFeedbackStat extends Component {
               totalFeed={totalFeed}
               positiveRate={positiveRate}
             />
+            </Section>
           )}
-        </Section>
+
       </div>
     );
   }

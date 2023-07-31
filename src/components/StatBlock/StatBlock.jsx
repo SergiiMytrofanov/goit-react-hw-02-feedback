@@ -4,7 +4,6 @@ import styles from "./StatBlock.module.css";
 
 const StatBlock = ({ good, neutral, bad, totalFeed, positiveRate }) => (
   <>
-    <h2 className={styles.statHeader}>Результат опитування</h2>
     <p className={styles.statValue}>Так: {good}</p>
     <p className={styles.statValue}>Тай таке: {neutral}</p>
     <p className={styles.statValue}>Ні: {bad}</p>
